@@ -7,7 +7,10 @@ namespace UserInterface
   {
     static void Main()
     {
-      Console.WriteLine("Hello World!");
+      Console.WriteLine("Welcome to Pierre's Bakery! Would you like to place an order? Yes/No");
+      string enterStore = Console.ReadLine().ToLower();
+      Console.WriteLine(enterStore);
+
     }
   }
 }
