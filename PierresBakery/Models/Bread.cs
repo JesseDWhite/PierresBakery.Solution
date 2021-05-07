@@ -21,8 +21,10 @@ namespace PierresBakery.Models
     {
       if (breadAmount % 2 == 0)
       {
-        BreadAmount = breadAmount *= breadPrice / 2;
-        // int total = BreadAmount += totalBreadOrder;
+        int total = BreadAmount = breadAmount *= breadPrice;
+        int convert = total / 2;
+        int addToTotal = convert += totalBreadOrder;
+        BreadAmount = convert;
       }
       else
       {
