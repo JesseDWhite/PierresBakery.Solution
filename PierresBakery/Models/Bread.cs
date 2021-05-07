@@ -3,8 +3,10 @@ using System.Collections.Generic;
 
 namespace Bread.Models
 {
-  class Bread
+  public class Bread
   {
-
+    public string BreadLoaf { get; set; }
+    public int BreadPrice { get; set; }
+    private static List<Bread> _breadOrder = new List<Bread> { };
   }
 }
