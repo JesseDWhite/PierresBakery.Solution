@@ -1,7 +1,9 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Template.Models;
+using Bread.Models;
+using System;
+using System.Collections.Generic;
 
-namespace Template.TestTools
+namespace Bread.TestTools
 {
   [TestClass]
   public class Program
