@@ -15,7 +15,7 @@ namespace UserInterface
         if (enterStore == "yes")
         {
           Console.WriteLine("Great, what would you like to order? Bread, or Pastry?");
-          string userOrderType = Console.ReadLine();
+          string userOrderType = Console.ReadLine().ToLower();
           if (userOrderType == "bread")
           {
             Console.WriteLine("and how many loaves of bread would you like?");
@@ -42,6 +42,17 @@ namespace UserInterface
         else
         {
           Console.WriteLine("Okay, thanks for coming in. We hope to see you again!");
+          List<Bread> breadTotal = Bread.ShowCheckout();
+          foreach (Bread individualItem in breadTotal)
+          {
+            int amount = individualItem.BreadAmount;
+          }
+          List<Pastry> pastryTotal = Pastry.ShowCheckout();
+          foreach (Pastry individualItem in pastryTotal)
+          {
+            int amount = individualItem.PastryAmount;
+          }
+          Console.WriteLine("This will have your total at some point");
           Environment.Exit(0);
         }
       }
