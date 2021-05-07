@@ -46,13 +46,14 @@ namespace UserInterface
           foreach (Bread individualItem in breadTotal)
           {
             int amount = individualItem.BreadAmount;
+            Console.WriteLine(amount);
           }
           List<Pastry> pastryTotal = Pastry.ShowCheckout();
           foreach (Pastry individualItem in pastryTotal)
           {
             int amount = individualItem.PastryAmount;
+            Console.WriteLine(amount);
           }
-          Console.WriteLine();
           Environment.Exit(0);
         }
       }

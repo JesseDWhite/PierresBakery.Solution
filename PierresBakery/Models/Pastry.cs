@@ -19,16 +19,7 @@ namespace PierresBakery.Models
     public Pastry(string pastryItem, int pastryAmount)
     : this(pastryItem)
     {
-      PastryAmount = pastryAmount;
-      if (pastryAmount >= 3)
-      {
-        int priceToAdd = pastryAmount *= pastryDiscounted;
-        priceToAdd += totalPastryOrder;
-      }
-      else
-      {
-        pastryAmount *= pastryPrice += totalPastryOrder;
-      }
+      PastryAmount = pastryAmount *= pastryPrice;
     }
     public static void ClearOrder()
     {
