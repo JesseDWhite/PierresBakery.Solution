@@ -26,5 +26,12 @@ namespace PierresBakery.TestTools
       string order = newBreadOrder.BreadLoaf;
       Assert.AreEqual(breadLoaf, order);
     }
+    [TestMethod]
+    public void BreadPrice_CreateListWithPrice_Bread()
+    {
+      Bread newBreadOrder = new Bread("bread loaf", 5);
+      int order = newBreadOrder.BreadPrice;
+      Assert.AreEqual(breadPrice, order);
+    }
   }
 }

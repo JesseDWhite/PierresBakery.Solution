@@ -13,6 +13,11 @@ namespace PierresBakery.Models
       BreadLoaf = breadLoaf;
       _breadOrder.Add(this);
     }
+    public Bread(string breadLoaf, int breadPrice)
+    {
+      BreadPrice = breadPrice;
+
+    }
     public static void ClearOrder()
     {
       _breadOrder.Clear();
