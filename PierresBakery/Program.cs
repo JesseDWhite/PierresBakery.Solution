@@ -52,7 +52,7 @@ namespace UserInterface
           {
             int amount = individualItem.PastryAmount;
           }
-          Console.WriteLine("This will have your total at some point");
+          Console.WriteLine();
           Environment.Exit(0);
         }
       }

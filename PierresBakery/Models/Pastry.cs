@@ -9,6 +9,7 @@ namespace PierresBakery.Models
     public int PastryAmount { get; set; }
     public int pastryPrice = 2;
     public int pastryDiscounted = 5;
+    public int totalPastryOrder = 0;
     private static List<Pastry> _pastryOrder = new List<Pastry> { };
     public Pastry(string pastryItem)
     {
@@ -19,6 +20,15 @@ namespace PierresBakery.Models
     : this(pastryItem)
     {
       PastryAmount = pastryAmount;
+      if (pastryAmount >= 3)
+      {
+        int priceToAdd = pastryAmount *= pastryDiscounted;
+        priceToAdd += totalPastryOrder;
+      }
+      else
+      {
+        pastryAmount *= pastryPrice += totalPastryOrder;
+      }
     }
     public static void ClearOrder()
     {
