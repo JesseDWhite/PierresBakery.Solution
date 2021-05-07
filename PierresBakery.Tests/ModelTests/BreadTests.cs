@@ -18,5 +18,13 @@ namespace PierresBakery.TestTools
       Bread newBreadOrder = new Bread("bread loaf");
       Assert.AreEqual(typeof(Bread), newBreadOrder.GetType());
     }
+    [TestMethod]
+    public void BreadItem_CreateListWithBreadItem_Bread()
+    {
+      string breadLoaf = "bread loaf";
+      Bread newBreadOrder = new Bread(breadLoaf);
+      string order = newBreadOrder.BreadLoaf;
+      Assert.AreEqual(breadLoaf, order);
+    }
   }
 }
