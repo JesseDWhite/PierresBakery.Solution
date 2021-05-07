@@ -21,7 +21,7 @@ namespace UserInterface
           {
             Console.WriteLine("and how many loaves of bread would you like?");
             int userAmount = int.Parse(Console.ReadLine());
-            Bread newBreadOrder = new Bread(userOrderType, userAmount);
+            Bread newBreadOrder = new Bread(userAmount);
           }
           else if (userOrderType == "pastry")
           {

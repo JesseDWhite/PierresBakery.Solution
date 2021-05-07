@@ -15,22 +15,22 @@ namespace PierresBakery.TestTools
     [TestMethod]
     public void BreadConstructor_CreateAnEmptyListOfBread_Bread()
     {
-      Bread newBreadOrder = new Bread("bread loaf");
+      Bread newBreadOrder = new Bread(1);
       Assert.AreEqual(typeof(Bread), newBreadOrder.GetType());
     }
     [TestMethod]
     public void BreadItem_CreateListWithBreadItem_String()
     {
-      string breadLoaf = "bread loaf";
+      int breadLoaf = 1;
       Bread newBreadOrder = new Bread(breadLoaf);
-      string order = newBreadOrder.BreadLoaf;
+      int order = newBreadOrder.BreadLoaf;
       Assert.AreEqual(breadLoaf, order);
     }
     [TestMethod]
     public void BreadPrice_CreateListWithPrice_Int()
     {
-      int breadAmount = 5;
-      Bread newBreadOrder = new Bread("bread loaf", 5);
+      int breadAmount = 20;
+      Bread newBreadOrder = new Bread(1, 5);
       int order = newBreadOrder.BreadAmount;
       Assert.AreEqual(breadAmount, order);
     }
@@ -44,7 +44,7 @@ namespace PierresBakery.TestTools
     [TestMethod]
     public void ShowCheckout_ReturnsAllOrders_BreadList()
     {
-      string newBreadOrder = "bread";
+      int newBreadOrder = 1;
       int newBreadAmout = 5;
       Bread newOrder = new Bread(newBreadOrder, newBreadAmout);
       List<Bread> newBreadOrderList = new List<Bread> { newOrder };
