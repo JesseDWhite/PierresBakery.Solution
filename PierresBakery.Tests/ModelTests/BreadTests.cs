@@ -6,8 +6,13 @@ using System.Collections.Generic;
 namespace Bread.TestTools
 {
   [TestClass]
-  public class Program
+  public class BreadTests : IDisposable
   {
-    //HERE IS WHERE YOU NEED TO PASS YOUR TESTS INTO.
+    public void Dispose()
+    {
+      Console.WriteLine("This is the disposable section.")
+    }
+    [TestMethod]
+    public void
   }
 }
