@@ -9,6 +9,7 @@ namespace UserInterface
     static void Main()
     {
       Console.WriteLine("Welcome to Pierre's Bakery! Would you like to place an order? Yes/No");
+      int totalOrderTest = 0;
       while (true)
       {
         string enterStore = Console.ReadLine().ToLower();
@@ -53,14 +54,17 @@ namespace UserInterface
           {
             int amount = individualItem.BreadAmount;
             Console.WriteLine($"Your total amount for your order of bread is: ${amount}");
+            int total = amount += totalOrderTest;
           }
           List<Pastry> pastryTotal = Pastry.ShowCheckout();
           foreach (Pastry individualItem in pastryTotal)
           {
             int amount = individualItem.PastryAmount;
             Console.WriteLine($"Your total amount for your order of pastries is: ${amount}");
+            amount += totalOrderTest;
+            int total = amount += totalOrderTest;
           }
-
+          Console.WriteLine(totalOrderTest);
           Environment.Exit(0);
         }
       }

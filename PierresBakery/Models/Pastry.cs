@@ -20,6 +20,7 @@ namespace PierresBakery.Models
     : this(pastryItem)
     {
       PastryAmount = pastryAmount *= pastryPrice;
+      int total = PastryAmount += totalPastryOrder;
     }
     public static void ClearOrder()
     {

@@ -20,6 +20,7 @@ namespace PierresBakery.Models
     : this(breadLoaf)
     {
       BreadAmount = breadAmount *= breadPrice;
+      int total = BreadAmount += totalBreadOrder;
     }
     public static void ClearOrder()
     {
