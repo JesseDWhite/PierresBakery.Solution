@@ -29,10 +29,10 @@ namespace PierresBakery.TestTools
     [TestMethod]
     public void BreadPrice_CreateListWithPrice_Bread()
     {
-      int breadPrice = 5;
+      int breadAmount = 5;
       Bread newBreadOrder = new Bread("bread loaf", 5);
-      int order = newBreadOrder.BreadPrice;
-      Assert.AreEqual(breadPrice, order);
+      int order = newBreadOrder.BreadAmount;
+      Assert.AreEqual(breadAmount, order);
     }
   }
 }
