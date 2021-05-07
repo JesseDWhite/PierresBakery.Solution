@@ -51,5 +51,10 @@ namespace PierresBakery.TestTools
       List<Bread> checkout = Bread.ShowCheckout();
       CollectionAssert.AreEqual(newBreadOrderList, checkout);
     }
+    [TestMethod]
+    public void ApplyDiscount_ReturnDiscountedRate_BreadList()
+    {
+
+    }
   }
 }
