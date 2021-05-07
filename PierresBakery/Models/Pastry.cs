@@ -7,6 +7,8 @@ namespace PierresBakery.Models
   {
     public string PastryItem { get; set; }
     public int PastryAmount { get; set; }
+    public int pastryPrice = 2;
+    public int pastryDiscounted = 5;
     private static List<Pastry> _pastryOrder = new List<Pastry> { };
     public Pastry(string pastryItem)
     {
