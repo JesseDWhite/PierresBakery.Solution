@@ -1,18 +1,22 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Bread.Models;
+using PierresBakery.Models;
 using System;
 using System.Collections.Generic;
 
-namespace Bread.TestTools
+namespace PierresBakery.TestTools
 {
   [TestClass]
   public class BreadTests : IDisposable
   {
     public void Dispose()
     {
-      Console.WriteLine("This is the disposable section.")
+      Bread.ClearOrder();
     }
     [TestMethod]
-    public void
+    public void BreadConstructor_CreateAnEmptyListOfBread_Bread()
+    {
+      Bread newBreadOrder = new Bread("bread loaf");
+      Assert.AreEqual(typeof(Bread), newBreadOrder.GetType());
+    }
   }
 }
