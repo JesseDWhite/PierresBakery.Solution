@@ -19,7 +19,7 @@ namespace PierresBakery.TestTools
       Assert.AreEqual(typeof(Bread), newBreadOrder.GetType());
     }
     [TestMethod]
-    public void BreadItem_CreateListWithBreadItem_Bread()
+    public void BreadItem_CreateListWithBreadItem_String()
     {
       string breadLoaf = "bread loaf";
       Bread newBreadOrder = new Bread(breadLoaf);
@@ -27,12 +27,20 @@ namespace PierresBakery.TestTools
       Assert.AreEqual(breadLoaf, order);
     }
     [TestMethod]
-    public void BreadPrice_CreateListWithPrice_Bread()
+    public void BreadPrice_CreateListWithPrice_Int()
     {
       int breadAmount = 5;
       Bread newBreadOrder = new Bread("bread loaf", 5);
       int order = newBreadOrder.BreadAmount;
       Assert.AreEqual(breadAmount, order);
     }
+    [TestMethod]
+    public void ShowCheckout_ReturnsEmptyOrderList_BreadList()
+    {
+      List<Bread> newBreadOrder = new List<Bread> { };
+      List<Bread> checkout = Bread.ShowCheckout();
+      CollectionAssert.AreEqual(newBreadOrder, checkout);
+    }
+
   }
 }
