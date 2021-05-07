@@ -19,8 +19,15 @@ namespace PierresBakery.Models
     public Bread(string breadLoaf, int breadAmount)
     : this(breadLoaf)
     {
-      BreadAmount = breadAmount *= breadPrice;
-      int total = BreadAmount += totalBreadOrder;
+      if (breadAmount % 2 == 0)
+      {
+        BreadAmount = breadAmount *= breadPrice / 2;
+        // int total = BreadAmount += totalBreadOrder;
+      }
+      else
+      {
+        BreadAmount = breadAmount *= breadPrice;
+      }
     }
     public static void ClearOrder()
     {
