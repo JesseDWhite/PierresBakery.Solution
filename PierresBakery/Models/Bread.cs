@@ -14,9 +14,9 @@ namespace PierresBakery.Models
       _breadOrder.Add(this);
     }
     public Bread(string breadLoaf, int breadPrice)
+    : this(breadLoaf)
     {
       BreadPrice = breadPrice;
-
     }
     public static void ClearOrder()
     {
