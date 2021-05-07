@@ -24,7 +24,7 @@ namespace PierresBakery.Models
     }
     public static List<Bread> ShowCheckout()
     {
-
+      return _breadOrder;
     }
   }
 }
