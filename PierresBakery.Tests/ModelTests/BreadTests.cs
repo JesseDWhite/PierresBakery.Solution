@@ -51,16 +51,5 @@ namespace PierresBakery.TestTools
       List<Bread> checkout = Bread.ShowCheckout();
       CollectionAssert.AreEqual(newBreadOrderList, checkout);
     }
-    [TestMethod]
-    public void BreadTotalPrice_AddNumberOfOrderToTotalPrice_BreadList()
-    {
-      int totalBreadOrder = 0;
-      string newBreadOrder = "bread";
-      int newBreadAmout = 2;
-      Bread newOrder = new Bread(newBreadOrder, newBreadAmout);
-      List<Bread> newBreadOrderList = new List<Bread> { newOrder };
-      List<Bread> checkout = Bread.ShowCheckout();
-      Assert.AreEqual(totalBreadOrder, checkout);
-    }
   }
 }

@@ -22,16 +22,22 @@ namespace UserInterface
             int userAmount = int.Parse(Console.ReadLine());
             Bread newBreadOrder = new Bread(userOrderType, userAmount);
           }
-          else
+          else if (userOrderType == "pastry")
           {
             Console.WriteLine("and how many pastries would you like?");
             int userAmount = int.Parse(Console.ReadLine());
             Pastry newBreadOrder = new Pastry(userOrderType, userAmount);
           }
+          else
+          {
+            Console.WriteLine("Okay, we're sorry we do not have what you are looking for.");
+            Environment.Exit(0);
+          }
         }
         else
         {
           Console.WriteLine("Okay, thanks for coming in. We hope to see you again!");
+          Environment.Exit(0);
         }
         Console.WriteLine("Is there anything else you would like to add to your order? Yes/No");
         string addToOrder = Console.ReadLine().ToLower();
@@ -46,14 +52,15 @@ namespace UserInterface
           foreach (Bread individualItem in breadTotal)
           {
             int amount = individualItem.BreadAmount;
-            Console.WriteLine(amount);
+            Console.WriteLine($"Your total amount for your order of bread is: ${amount}");
           }
           List<Pastry> pastryTotal = Pastry.ShowCheckout();
           foreach (Pastry individualItem in pastryTotal)
           {
             int amount = individualItem.PastryAmount;
-            Console.WriteLine(amount);
+            Console.WriteLine($"Your total amount for your order of pastries is: ${amount}");
           }
+
           Environment.Exit(0);
         }
       }
