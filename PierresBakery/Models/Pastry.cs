@@ -22,6 +22,9 @@ namespace PierresBakery.Models
     {
       _pastryOrder.Clear();
     }
-
+    public static List<Pastry> ShowCheckout()
+    {
+      return _pastryOrder;
+    }
   }
 }
