@@ -13,39 +13,25 @@ namespace PierresBakery.Models
     private static List<Bread> _breadOrder = new List<Bread> { };
     public Bread(int breadLoaf)
     {
-      int total = BreadLoaf = breadLoaf;
-      if (total % 2 == 0)
+      int main = BreadLoaf = breadLoaf;
+      int convert = main *= breadPrice;
+      _breadOrder.Add(this);
+      if (main == 2)
       {
-        total += breadDiscounted;
-        _breadOrder.Add(this);
-        Console.WriteLine($"That was the first branch {total}");
+        BreadAmount = convert;
+        Console.WriteLine($"That was the first branch {convert}");
       }
       else
       {
-        _breadOrder.Add(this);
-        Console.WriteLine("That was the second branch");
+        BreadAmount = convert;
+        Console.WriteLine($"That was the second branch {convert}");
       }
     }
     public Bread(int breadLoaf, int breadAmount)
     : this(breadLoaf)
     {
-      BreadAmount = breadAmount *= breadPrice;
-      int total = BreadAmount += totalBreadOrder;
+      BreadAmount = breadAmount;
     }
-    // if (breadAmount % 2 == 0)
-    // {
-    //   int total = BreadAmount = breadAmount *= breadPrice;
-    //   int convert = total / 2;
-    //   int addToTotal = convert += totalBreadOrder;
-    //   BreadAmount = convert;
-    // }
-    // else
-    // {
-    //   int getOneFree = breadAmount -= 1;
-    //   int total = BreadAmount = breadAmount *= breadPrice;
-    //   breadAmount = getOneFree;
-    // }
-
     public static void ClearOrder()
     {
       _breadOrder.Clear();

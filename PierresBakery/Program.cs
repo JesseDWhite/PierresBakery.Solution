@@ -27,7 +27,7 @@ namespace UserInterface
           {
             Console.WriteLine("and how many pastries would you like?");
             int userAmount = int.Parse(Console.ReadLine());
-            Pastry newBreadOrder = new Pastry(userAmount);
+            Pastry newPastryOrder = new Pastry(userAmount);
           }
           else
           {
@@ -50,21 +50,19 @@ namespace UserInterface
         {
           Console.WriteLine("Okay, thanks for coming in. We hope to see you again!");
           List<Bread> breadTotal = Bread.ShowCheckout();
-          foreach (Bread individualItem in breadTotal)
+          foreach (Bread individualLoaf in breadTotal)
           {
-            int amount = individualItem.BreadAmount;
+            int amount = individualLoaf.BreadAmount;
             Console.WriteLine($"Your total amount for your order of bread is: ${amount}");
             int total = amount += totalOrderTest;
           }
           List<Pastry> pastryTotal = Pastry.ShowCheckout();
-          foreach (Pastry individualItem in pastryTotal)
+          foreach (Pastry individualPastry in pastryTotal)
           {
-            int amount = individualItem.PastryAmount;
+            int amount = individualPastry.PastryAmount;
             Console.WriteLine($"Your total amount for your order of pastries is: ${amount}");
-            amount += totalOrderTest;
             int total = amount += totalOrderTest;
           }
-          Console.WriteLine(totalOrderTest);
           Environment.Exit(0);
         }
       }

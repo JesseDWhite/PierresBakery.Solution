@@ -30,7 +30,7 @@ namespace PierresBakery.TestTools
     public void BreadPrice_CreateListWithPrice_Int()
     {
       int breadAmount = 25;
-      Bread newBreadOrder = new Bread(1, 5);
+      Bread newBreadOrder = new Bread(5);
       int order = newBreadOrder.BreadAmount;
       Assert.AreEqual(breadAmount, order);
     }

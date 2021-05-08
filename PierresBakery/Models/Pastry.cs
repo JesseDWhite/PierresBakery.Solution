@@ -13,14 +13,14 @@ namespace PierresBakery.Models
     private static List<Pastry> _pastryOrder = new List<Pastry> { };
     public Pastry(int pastryItem)
     {
-      PastryItem = pastryItem;
+      int main = PastryItem = pastryItem;
+      int convert = main *= pastryPrice;
       _pastryOrder.Add(this);
+      PastryAmount = convert;
     }
     public Pastry(int pastryItem, int pastryAmount)
     : this(pastryItem)
     {
-      PastryAmount = pastryAmount *= pastryPrice;
-      int total = PastryAmount += totalPastryOrder;
       PastryAmount = pastryAmount;
     }
     public static void ClearOrder()
