@@ -45,8 +45,7 @@ namespace PierresBakery.TestTools
     public void ShowCheckout_ReturnsAllOrders_BreadList()
     {
       int newBreadOrder = 1;
-      int newBreadAmout = 5;
-      Bread newOrder = new Bread(newBreadOrder, newBreadAmout);
+      Bread newOrder = new Bread(newBreadOrder);
       List<Bread> newBreadOrderList = new List<Bread> { newOrder };
       List<Bread> checkout = Bread.ShowCheckout();
       CollectionAssert.AreEqual(newBreadOrderList, checkout);

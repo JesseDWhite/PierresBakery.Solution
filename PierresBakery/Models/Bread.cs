@@ -7,30 +7,14 @@ namespace PierresBakery.Models
   {
     public int BreadLoaf { get; set; }
     public int BreadAmount { get; set; }
-    public int breadPrice = 5;
-    public int breadDiscounted = 1;
-    public int totalBreadOrder = 0;
+    public int BreadPrice { get; set; }
+    public int BreadTotal { get; set; }
     private static List<Bread> _breadOrder = new List<Bread> { };
     public Bread(int breadLoaf)
     {
-      int main = BreadLoaf = breadLoaf;
-      int convert = main *= breadPrice;
+      BreadLoaf = breadLoaf;
+      BreadPrice = 5;
       _breadOrder.Add(this);
-      if (main == 2)
-      {
-        BreadAmount = convert;
-        Console.WriteLine($"That was the first branch {convert}");
-      }
-      else
-      {
-        BreadAmount = convert;
-        Console.WriteLine($"That was the second branch {convert}");
-      }
-    }
-    public Bread(int breadLoaf, int breadAmount)
-    : this(breadLoaf)
-    {
-      BreadAmount = breadAmount;
     }
     public static void ClearOrder()
     {
@@ -39,6 +23,23 @@ namespace PierresBakery.Models
     public static List<Bread> ShowCheckout()
     {
       return _breadOrder;
+    }
+    public int GetPrice()
+    {
+      BreadTotal = BreadLoaf * BreadPrice;
+      return BreadTotal;
+    }
+    public int GetDiscount()
+    {
+      if (BreadTotal < 3)
+      {
+        return BreadTotal;
+      }
+      else
+      {
+        BreadTotal -= (BreadLoaf / 3);
+        return BreadTotal;
+      }
     }
   }
 }
