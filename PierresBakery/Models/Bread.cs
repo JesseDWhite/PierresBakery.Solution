@@ -26,11 +26,12 @@ namespace PierresBakery.Models
     }
     public int GetPrice()
     {
-      BreadTotal = BreadLoaf * BreadPrice;
+      BreadTotal = BreadLoaf *= BreadPrice;
       return BreadTotal;
     }
     public int GetDiscount()
     {
+      BreadTotal = BreadLoaf *= BreadPrice;
       if (BreadTotal < 3)
       {
         return BreadTotal;
