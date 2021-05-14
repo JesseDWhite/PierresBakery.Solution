@@ -28,18 +28,23 @@ namespace PierresBakery.Models
       PastryTotal = PastryItem *= PastryPrice;
       return PastryTotal;
     }
+    // public int GetDiscount()
+    // {
+    //   PastryTotal = PastryItem *= PastryPrice;
+    //   if (PastryTotal < 3)
+    //   {
+    //     return PastryTotal;
+    //   }
+    //   else if (PastryTotal % 3 == 0)
+    //   {
+    //     PastryTotal -= (PastryItem / 3);
+    //   }
+    //   return PastryTotal;
+    // }
     public int GetDiscount()
     {
-      PastryTotal = PastryItem *= PastryPrice;
-      if (PastryTotal < 3)
-      {
-        return PastryTotal;
-      }
-      else if (PastryTotal % 3 == 0)
-      {
-        PastryTotal -= (PastryItem / 3);
-      }
-      return PastryTotal;
+      int convert = PastryItem % 3;
+      return (PastryItem / 3 * 5) + (convert * 2);
     }
   }
 }

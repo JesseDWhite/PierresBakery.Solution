@@ -29,7 +29,7 @@ namespace PierresBakery.TestTools
     [TestMethod]
     public void PastryPrice_CreateListWithPrice_Int()
     {
-      int PastryAmount = 25;
+      int PastryAmount = 10;
       Pastry newPastryOrder = new Pastry(5);
       int order = newPastryOrder.GetPrice();
       Assert.AreEqual(PastryAmount, order);
@@ -53,7 +53,7 @@ namespace PierresBakery.TestTools
     [TestMethod]
     public void ApplyDiscount_ReturnDiscountedRate_PastryList()
     {
-      int discountedPastry = 10;
+      int discountedPastry = 5;
       Pastry newPastryOrder = new Pastry(3);
       int order = newPastryOrder.GetDiscount();
       Assert.AreEqual(discountedPastry, order);
@@ -61,7 +61,7 @@ namespace PierresBakery.TestTools
     [TestMethod]
     public void ApplyLargerDiscount_ReturnDiscountedRateAbove3Items_PastryList()
     {
-      int discountedPastry = 20;
+      int discountedPastry = 10;
       Pastry newPastryOrder = new Pastry(6);
       int order = newPastryOrder.GetDiscount();
       Assert.AreEqual(discountedPastry, order);
@@ -69,7 +69,7 @@ namespace PierresBakery.TestTools
     [TestMethod]
     public void ApplyLargerDiscount_ReturnDiscountedRateOfOddNumberNotDivisibleByThree_PastryList()
     {
-      int discountedPastry = 25;
+      int discountedPastry = 12;
       Pastry newPastryOrder = new Pastry(7);
       int order = newPastryOrder.GetDiscount();
       Assert.AreEqual(discountedPastry, order);
