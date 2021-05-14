@@ -74,6 +74,5 @@ namespace PierresBakery.TestTools
       int order = newBreadOrder.GetDiscount();
       Assert.AreEqual(discountedBread, order);
     }
-
   }
 }
