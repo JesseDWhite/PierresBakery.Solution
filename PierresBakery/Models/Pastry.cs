@@ -23,11 +23,6 @@ namespace PierresBakery.Models
     {
       return _pastryOrder;
     }
-    public int GetPrice()
-    {
-      PastryTotal = PastryItem *= PastryPrice;
-      return PastryTotal;
-    }
     public int GetDiscount()
     {
       int convert = PastryItem % 3;

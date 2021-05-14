@@ -29,9 +29,9 @@ namespace PierresBakery.TestTools
     [TestMethod]
     public void PastryPrice_CreateListWithPrice_Int()
     {
-      int PastryAmount = 10;
+      int PastryAmount = 9;
       Pastry newPastryOrder = new Pastry(5);
-      int order = newPastryOrder.GetPrice();
+      int order = newPastryOrder.GetDiscount();
       Assert.AreEqual(PastryAmount, order);
     }
     [TestMethod]
