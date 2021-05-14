@@ -10,26 +10,25 @@ namespace UserInterface
     {
       Console.WriteLine("Welcome to Pierre's Bakery! Would you like to place an order? Yes/No");
       string enterStore = Console.ReadLine().ToLower();
-      int customerCheckout = 0;
+      int breadTotal = 0;
+      int pastryTotal = 0;
       if (enterStore == "yes")
       {
         Console.WriteLine("Great, what would you like to order? Bread, or Pastry?");
         string userOrderType = Console.ReadLine().ToLower();
         if (userOrderType == "bread")
         {
-          Console.WriteLine("and how many loaves of bread would you like?");
+          Console.WriteLine("Bread is buy 2 get 1 free. How many loaves of bread would you like?");
           int userAmount = int.Parse(Console.ReadLine());
           Bread newBreadOrder = new Bread(userAmount);
-          int addToTotal = newBreadOrder.GetDiscount();
-          addToTotal += customerCheckout;
+          breadTotal += newBreadOrder.GetDiscount();
         }
         else if (userOrderType == "pastry")
         {
-          Console.WriteLine("and how many pastries would you like?");
+          Console.WriteLine("Pastries are buy 3 get 1 for $1.00. How many pastries would you like?");
           int userAmount = int.Parse(Console.ReadLine());
           Pastry newPastryOrder = new Pastry(userAmount);
-          int addToTotal = newPastryOrder.GetDiscount();
-          addToTotal += customerCheckout;
+          pastryTotal += newPastryOrder.GetDiscount();
         }
         else
         {
@@ -39,7 +38,7 @@ namespace UserInterface
       }
       else
       {
-        Console.WriteLine("Okay, thanks for coming in. We hope to see you again!");
+        Console.WriteLine("Chiabatta stay away from me. I don't want naan of that!");
         Environment.Exit(0);
       }
       Console.WriteLine("Is there anything else you would like to add to your order? Yes/No");
@@ -50,23 +49,21 @@ namespace UserInterface
       }
       else
       {
-        Console.WriteLine("Okay, thanks for coming in. We hope to see you again!");
+        Console.WriteLine("Okay, thanks for coming in. We really kneeded the dough!");
 
         List<Bread> newBreadOrder = Bread.ShowCheckout();
         foreach (Bread individualLoaf in newBreadOrder)
         {
-          int amount = individualLoaf.BreadTotal;
-          // int total = amount += customerCheckout;
+          int amount = individualLoaf.GetDiscount();
           Console.WriteLine($"Your total amount for your order of bread is: ${amount}");
         }
-        List<Pastry> pastryTotal = Pastry.ShowCheckout();
-        foreach (Pastry individualPastry in pastryTotal)
+        List<Pastry> newPastryOrder = Pastry.ShowCheckout();
+        foreach (Pastry individualPastry in newPastryOrder)
         {
-          int amount = individualPastry.PastryTotal;
-          // int total = amount += customerCheckout;
+          int amount = individualPastry.GetDiscount();
           Console.WriteLine($"Your total amount for your order of pastries is: ${amount}");
         }
-        Console.WriteLine($"${customerCheckout}");
+        Console.WriteLine($"${breadTotal += pastryTotal}.00");
         Environment.Exit(0);
       }
     }

@@ -12,6 +12,7 @@ namespace PierresBakery.Models
     public Bread(int breadLoaf)
     {
       BreadLoaf = breadLoaf;
+      BreadTotal = 0;
       BreadPrice = 5;
       _breadOrder.Add(this);
     }
@@ -34,10 +35,7 @@ namespace PierresBakery.Models
       {
         return (BreadLoaf * 5) - (BreadLoaf / 3 * BreadPrice);
       }
-      else
-      {
-        return BreadLoaf * BreadPrice;
-      }
+      return BreadLoaf * BreadPrice;
     }
   }
 }
