@@ -6,7 +6,6 @@ namespace PierresBakery.Models
   public class Bread
   {
     public int BreadLoaf { get; set; }
-    public int BreadAmount { get; set; }
     public int BreadPrice { get; set; }
     public int BreadTotal { get; set; }
     private static List<Bread> _breadOrder = new List<Bread> { };
@@ -31,16 +30,15 @@ namespace PierresBakery.Models
     }
     public int GetDiscount()
     {
-      BreadTotal = BreadLoaf *= BreadPrice;
-      if (BreadTotal < 3)
+      if (BreadLoaf > 1)
       {
-        return BreadTotal;
+        return (BreadLoaf * 5) - (BreadLoaf / 3 * BreadPrice);
       }
       else
       {
-        BreadTotal -= (BreadLoaf / 3);
-        return BreadTotal;
+        return BreadLoaf * BreadPrice;
       }
     }
   }
 }
+

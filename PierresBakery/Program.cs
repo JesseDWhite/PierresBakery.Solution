@@ -9,8 +9,8 @@ namespace UserInterface
     static void Main()
     {
       Console.WriteLine("Welcome to Pierre's Bakery! Would you like to place an order? Yes/No");
-      int totalOrderTest = 0;
       string enterStore = Console.ReadLine().ToLower();
+      int customerCheckout = 0;
       if (enterStore == "yes")
       {
         Console.WriteLine("Great, what would you like to order? Bread, or Pastry?");
@@ -20,12 +20,16 @@ namespace UserInterface
           Console.WriteLine("and how many loaves of bread would you like?");
           int userAmount = int.Parse(Console.ReadLine());
           Bread newBreadOrder = new Bread(userAmount);
+          int addToTotal = newBreadOrder.GetDiscount();
+          addToTotal += customerCheckout;
         }
         else if (userOrderType == "pastry")
         {
           Console.WriteLine("and how many pastries would you like?");
           int userAmount = int.Parse(Console.ReadLine());
           Pastry newPastryOrder = new Pastry(userAmount);
+          int addToTotal = newPastryOrder.GetDiscount();
+          addToTotal += customerCheckout;
         }
         else
         {
@@ -47,20 +51,22 @@ namespace UserInterface
       else
       {
         Console.WriteLine("Okay, thanks for coming in. We hope to see you again!");
-        List<Bread> breadTotal = Bread.ShowCheckout();
-        foreach (Bread individualLoaf in breadTotal)
+
+        List<Bread> newBreadOrder = Bread.ShowCheckout();
+        foreach (Bread individualLoaf in newBreadOrder)
         {
-          int amount = individualLoaf.BreadAmount;
+          int amount = individualLoaf.BreadTotal;
+          // int total = amount += customerCheckout;
           Console.WriteLine($"Your total amount for your order of bread is: ${amount}");
-          int total = amount += totalOrderTest;
         }
         List<Pastry> pastryTotal = Pastry.ShowCheckout();
         foreach (Pastry individualPastry in pastryTotal)
         {
-          int amount = individualPastry.PastryAmount;
+          int amount = individualPastry.PastryTotal;
+          // int total = amount += customerCheckout;
           Console.WriteLine($"Your total amount for your order of pastries is: ${amount}");
-          int total = amount += totalOrderTest;
         }
+        Console.WriteLine($"${customerCheckout}");
         Environment.Exit(0);
       }
     }

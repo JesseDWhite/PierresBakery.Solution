@@ -58,5 +58,22 @@ namespace PierresBakery.TestTools
       int order = newBreadOrder.GetDiscount();
       Assert.AreEqual(discountedBread, order);
     }
+    [TestMethod]
+    public void ApplyLargerDiscount_ReturnDiscountedRateAbove3Items_BreadList()
+    {
+      int discountedBread = 20;
+      Bread newBreadOrder = new Bread(6);
+      int order = newBreadOrder.GetDiscount();
+      Assert.AreEqual(discountedBread, order);
+    }
+    [TestMethod]
+    public void ApplyLargerDiscount_ReturnDiscountedRateOfOddNumberNotDivisibleByThree_BreadList()
+    {
+      int discountedBread = 25;
+      Bread newBreadOrder = new Bread(7);
+      int order = newBreadOrder.GetDiscount();
+      Assert.AreEqual(discountedBread, order);
+    }
+
   }
 }

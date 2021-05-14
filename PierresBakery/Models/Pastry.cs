@@ -6,22 +6,14 @@ namespace PierresBakery.Models
   public class Pastry
   {
     public int PastryItem { get; set; }
-    public int PastryAmount { get; set; }
-    public int pastryPrice = 2;
-    public int pastryDiscounted = 5;
-    public int totalPastryOrder = 0;
+    public int PastryPrice { get; set; }
+    public int PastryTotal { get; set; }
     private static List<Pastry> _pastryOrder = new List<Pastry> { };
     public Pastry(int pastryItem)
     {
-      int main = PastryItem = pastryItem;
-      int convert = main *= pastryPrice;
+      PastryItem = pastryItem;
+      PastryPrice = 2;
       _pastryOrder.Add(this);
-      PastryAmount = convert;
-    }
-    public Pastry(int pastryItem, int pastryAmount)
-    : this(pastryItem)
-    {
-      PastryAmount = pastryAmount;
     }
     public static void ClearOrder()
     {
@@ -30,6 +22,24 @@ namespace PierresBakery.Models
     public static List<Pastry> ShowCheckout()
     {
       return _pastryOrder;
+    }
+    public int GetPrice()
+    {
+      PastryTotal = PastryItem *= PastryPrice;
+      return PastryTotal;
+    }
+    public int GetDiscount()
+    {
+      PastryTotal = PastryItem *= PastryPrice;
+      if (PastryTotal < 3)
+      {
+        return PastryTotal;
+      }
+      else if (PastryTotal % 3 == 0)
+      {
+        PastryTotal -= (PastryItem / 3);
+      }
+      return PastryTotal;
     }
   }
 }
