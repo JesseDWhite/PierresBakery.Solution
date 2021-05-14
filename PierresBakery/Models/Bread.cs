@@ -24,11 +24,6 @@ namespace PierresBakery.Models
     {
       return _breadOrder;
     }
-    public int GetPrice()
-    {
-      BreadTotal = BreadLoaf *= BreadPrice;
-      return BreadTotal;
-    }
     public int GetDiscount()
     {
       if (BreadLoaf > 1)

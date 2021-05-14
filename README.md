@@ -3,7 +3,7 @@
 #### By _Jesse White_
 ## Technologies Used
 * _.NET_ 🥅
-* _C#_ #️⃣
+* _C#_ 🆒
 ## Description 📜
 _This web application will allow you to place an order with Pierre's Bakery for either bread, or pastries. Once your order has been placed, it will give you the total cost at the end. There are also two BOGO deals inside._
 ### Prerequisites 💻
@@ -18,8 +18,7 @@ _This web application will allow you to place an order with Pierre's Bakery for 
     * _Run the command `dotnet run` to start the application_
 5. To run tests, navigate to `PierresBakery.Tests/` in your terminal and run the command `dotnet test`
 ## Known Bugs 🐛
-* _Final price will not display at the end of the order._
-* _Discount offer is not applying correctly._
+* _If the user wants to add to an exsiting order, it will take you all the way back to Main()._
 ## License ⚖
 _MIT © Jesse White 2021_
 ## Contact Information 🤳
